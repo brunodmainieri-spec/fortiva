@@ -1,0 +1,135 @@
+﻿.evolution-page {
+  min-width: 0;
+}
+.evolution-page .coverage-summary {
+  padding: 16px 18px;
+  margin: 0 0 20px;
+  border: 1px solid #335671;
+  border-radius: 14px;
+  color: #b3c4d7;
+  background: #183148;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.coverage-summary strong {
+  color: #f2f0e8;
+  font-size: 16px;
+}
+.coverage-summary p {
+  margin: 5px 0 0;
+}
+.record-detail {
+  display: block;
+  margin-top: 5px;
+  color: #a3b4c7;
+  font-size: 12px;
+}
+.energy-disclosure {
+  padding: 0;
+  overflow: hidden;
+}
+.energy-disclosure > summary {
+  cursor: pointer;
+  padding: 19px 22px;
+  color: #f3f0e8;
+  font-size: 16px;
+  font-weight: 650;
+}
+.energy-disclosure > summary > small {
+  display: block;
+  color: #a3b4c7;
+  font-size: 13px;
+  font-weight: 400;
+  padding-top: 5px;
+}
+.energy-disclosure[open] > summary {
+  border-bottom: 1px solid #294862;
+}
+.energy-disclosure .disclosure-content {
+  padding: 22px;
+}
+.energy-panel .stats-row.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.evolution-page .chart-description {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.evolution-page .responsive-table td {
+  font-size: 13px;
+}
+.evolution-page .icon-button {
+  min-width: 44px;
+  min-height: 44px;
+}
+@media (max-width: 760px) {
+  .evolution-page .energy-primary-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .evolution-page .responsive-table {
+    overflow: visible;
+  }
+  .evolution-page .responsive-table table {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+  .evolution-page .responsive-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .evolution-page .responsive-table tbody {
+    display: grid;
+    gap: 14px;
+  }
+  .evolution-page .responsive-table tr {
+    display: block;
+    padding: 12px;
+    border: 1px solid #2b4b65;
+    border-radius: 12px;
+    background: #183047;
+  }
+  .evolution-page .responsive-table td {
+    display: grid;
+    grid-template-columns: minmax(104px, 0.85fr) minmax(0, 1.3fr);
+    align-items: center;
+    gap: 8px;
+    padding: 9px 0;
+    border: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 13px;
+    text-align: left;
+  }
+  .evolution-page .responsive-table td::before {
+    content: attr(data-label);
+    color: #a3b4c7;
+    font-size: 12px;
+  }
+  .evolution-page .responsive-table td > small {
+    grid-column: 2;
+  }
+  .evolution-page .responsive-table td .button-row {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .energy-disclosure > summary {
+    padding: 17px;
+  }
+  .energy-disclosure .disclosure-content {
+    padding: 17px;
+  }
+  .energy-disclosure .stats-row.two,
+  .energy-disclosure .stats-row.three {
+    grid-template-columns: 1fr;
+  }
+  .evolution-page .coverage-summary {
+    padding: 14px;
+  }
+}
+.energy-panel > .energy-disclosure {
+  margin-bottom: 14px;
+}

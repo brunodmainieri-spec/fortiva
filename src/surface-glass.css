@@ -1,0 +1,551 @@
+/* Shared optical treatment. Keep the matching surface list in glass-interactions.tsx. */
+:root {
+  --glass-body: linear-gradient(
+    145deg,
+    rgba(30, 58, 82, 0.88),
+    rgba(17, 39, 61, 0.94)
+  );
+  --glass-blur: none;
+  --glass-edge: rgba(242, 240, 232, 0.2);
+  --glass-shadow:
+    0 12px 34px -18px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(244, 240, 232, 0.15),
+    inset 0 -1px 0 rgba(233, 231, 225, 0.045);
+}
+@supports (
+  (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
+) {
+  :root {
+    --glass-body: linear-gradient(
+      145deg,
+      rgba(30, 58, 82, 0.76),
+      rgba(17, 39, 61, 0.88)
+    );
+    --glass-blur: blur(16px) saturate(120%);
+  }
+}
+:root
+  :is(
+    .card,
+    .workout-feature,
+    .ai-banner,
+    .empty-meal,
+    .training-intro,
+    .running-banner,
+    .consistency-card,
+    .history-row,
+    .item-editor,
+    .session-exercise,
+    .plan-day-editor,
+    .food-library,
+    .assistant-context,
+    .assistant-answer details,
+    .formula-details,
+    .meal-total,
+    .upload-zone,
+    .photo-analysis,
+    .workout-focus,
+    .auth-form-box
+  ) {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--glass-edge);
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      ellipse at 0% 0%,
+      rgba(233, 231, 225, 0.05),
+      transparent 55%
+    ),
+    var(--glass-body);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+:root
+  :is(
+    .card,
+    .workout-feature,
+    .ai-banner,
+    .empty-meal,
+    .training-intro,
+    .running-banner,
+    .consistency-card,
+    .history-row,
+    .item-editor,
+    .session-exercise,
+    .plan-day-editor,
+    .food-library,
+    .assistant-context,
+    .assistant-answer details,
+    .formula-details,
+    .meal-total,
+    .upload-zone,
+    .photo-analysis,
+    .workout-focus,
+    .auth-form-box
+  )::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      350px circle at var(--glass-x, 25%) var(--glass-y, 0%),
+      rgba(244, 240, 232, var(--glass-light, 0)),
+      transparent 72%
+    ),
+    linear-gradient(
+      125deg,
+      rgba(244, 240, 232, 0.055),
+      transparent 30%,
+      transparent 80%,
+      rgba(242, 240, 232, 0.025)
+    );
+}
+:root
+  :is(
+    .card,
+    .workout-feature,
+    .ai-banner,
+    .empty-meal,
+    .training-intro,
+    .running-banner,
+    .consistency-card,
+    .history-row,
+    .item-editor,
+    .session-exercise,
+    .plan-day-editor,
+    .food-library,
+    .assistant-context,
+    .assistant-answer details,
+    .formula-details,
+    .meal-total,
+    .upload-zone,
+    .photo-analysis,
+    .workout-focus,
+    .auth-form-box
+  )::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 10%;
+  right: 20%;
+  top: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(244, 240, 232, 0.4),
+    transparent
+  );
+}
+/* Nested editors use tighter corners without changing their layout or controls. */
+:root
+  :is(
+    .item-editor,
+    .session-exercise,
+    .plan-day-editor,
+    .food-library,
+    .assistant-context,
+    .assistant-answer details,
+    .formula-details,
+    .meal-total,
+    .upload-zone,
+    .photo-analysis,
+    .history-row,
+    .empty-meal
+  ) {
+  border-radius: 16px;
+}
+:root :is(.plan-active, .running-banner, .workout-focus, .plan-draft-banner) {
+  border-color: rgba(244, 240, 232, 0.38);
+}
+:root .auth-form-box {
+  padding: 26px;
+  max-width: 430px;
+}
+/* Dialog positioning, sticky headers and floating illustrations remain independent. */
+:root :is(.modal, .floating-mini) {
+  background: linear-gradient(
+    140deg,
+    rgba(30, 57, 81, 0.97),
+    rgba(18, 41, 63, 0.97)
+  );
+  border: 1px solid rgba(244, 240, 232, 0.25);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(244, 240, 232, 0.18);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+:root .modal {
+  border-radius: 24px;
+}
+:root :is(.modal-header, .assistant-compose) {
+  background: rgba(22, 46, 68, 0.96);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+:root :is(.info-box, .success-box, .error-box, .coverage-summary) {
+  box-shadow: inset 0 1px 0 rgba(244, 240, 232, 0.08);
+  border-radius: 12px;
+}
+:root :is(.btn-secondary, .icon-btn, .segmented, .subtle-badge) {
+  box-shadow:
+    inset 0 1px 0 rgba(244, 240, 232, 0.1),
+    0 3px 8px rgba(0, 0, 0, 0.08);
+}
+:root .btn-secondary {
+  background: linear-gradient(
+    145deg,
+    rgba(51, 87, 114, 0.6),
+    rgba(31, 59, 83, 0.8)
+  );
+  border-color: rgba(233, 231, 225, 0.3);
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  :root
+    :is(
+      .card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .training-intro,
+      .running-banner,
+      .consistency-card,
+      .history-row,
+      .item-editor,
+      .session-exercise,
+      .plan-day-editor,
+      .food-library,
+      .assistant-context,
+      .assistant-answer details,
+      .formula-details,
+      .meal-total,
+      .upload-zone,
+      .photo-analysis,
+      .workout-focus,
+      .auth-form-box
+    ):hover {
+    border-color: rgba(244, 240, 232, 0.36);
+    box-shadow:
+      0 18px 38px -19px rgba(0, 0, 0, 0.7),
+      inset 0 1px 0 rgba(244, 240, 232, 0.24),
+      inset 0 -1px 0 rgba(233, 231, 225, 0.07);
+  }
+  :root
+    :is(
+      .card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .training-intro,
+      .running-banner,
+      .consistency-card,
+      .history-row,
+      .item-editor,
+      .session-exercise,
+      .plan-day-editor,
+      .food-library,
+      .assistant-context,
+      .assistant-answer details,
+      .formula-details,
+      .meal-total,
+      .upload-zone,
+      .photo-analysis,
+      .workout-focus,
+      .auth-form-box
+    )[data-glass-hover] {
+    --glass-light: 0.075;
+  }
+  /* Only compact cards move; forms, charts and tables stay still while in use. */
+  :root
+    :is(
+      .stat-card,
+      .meal-card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .history-row
+    ):hover:not(:focus-within) {
+    transform: translateY(-2px);
+  }
+  :root :is(button.ai-banner, button.empty-meal, button.history-row):active {
+    transform: translateY(0);
+  }
+  :root :is(.btn-secondary, .icon-btn):hover:not(:disabled) {
+    border-color: rgba(244, 240, 232, 0.6);
+    box-shadow:
+      inset 0 1px 0 rgba(244, 240, 232, 0.22),
+      0 4px 14px rgba(0, 0, 0, 0.18);
+  }
+}
+:root
+  :is(
+    .card,
+    .workout-feature,
+    .ai-banner,
+    .empty-meal,
+    .training-intro,
+    .running-banner,
+    .consistency-card,
+    .history-row,
+    .item-editor,
+    .session-exercise,
+    .plan-day-editor,
+    .food-library,
+    .assistant-context,
+    .assistant-answer details,
+    .formula-details,
+    .meal-total,
+    .upload-zone,
+    .photo-analysis,
+    .workout-focus,
+    .auth-form-box
+  ):has(:focus-visible),
+:root
+  :is(
+    .card,
+    .workout-feature,
+    .ai-banner,
+    .empty-meal,
+    .training-intro,
+    .running-banner,
+    .consistency-card,
+    .history-row,
+    .item-editor,
+    .session-exercise,
+    .plan-day-editor,
+    .food-library,
+    .assistant-context,
+    .assistant-answer details,
+    .formula-details,
+    .meal-total,
+    .upload-zone,
+    .photo-analysis,
+    .workout-focus,
+    .auth-form-box
+  ):focus-visible {
+  border-color: #f4f0e8;
+}
+@media (max-width: 760px) {
+  :root {
+    --glass-blur: blur(10px) saturate(115%);
+  }
+  :root .auth-form-box {
+    padding: 20px 16px;
+  }
+  :root .card {
+    border-radius: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+  :root
+    :is(
+      .card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .training-intro,
+      .running-banner,
+      .consistency-card,
+      .history-row,
+      .item-editor,
+      .session-exercise,
+      .plan-day-editor,
+      .food-library,
+      .assistant-context,
+      .assistant-answer details,
+      .formula-details,
+      .meal-total,
+      .upload-zone,
+      .photo-analysis,
+      .workout-focus,
+      .auth-form-box
+    ) {
+    --glass-light: 0;
+    transition: none;
+  }
+  :root
+    :is(
+      .stat-card,
+      .meal-card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .history-row
+    ):hover {
+    transform: none;
+  }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  :root {
+    --glass-blur: none;
+    --glass-body: #142c42;
+    --glass-edge: #487391;
+  }
+  :root
+    :is(
+      .card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .training-intro,
+      .running-banner,
+      .consistency-card,
+      .history-row,
+      .item-editor,
+      .session-exercise,
+      .plan-day-editor,
+      .food-library,
+      .assistant-context,
+      .assistant-answer details,
+      .formula-details,
+      .meal-total,
+      .upload-zone,
+      .photo-analysis,
+      .workout-focus,
+      .auth-form-box
+    ) {
+    background: #142c42;
+  }
+  :root
+    :is(
+      .card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .training-intro,
+      .running-banner,
+      .consistency-card,
+      .history-row,
+      .item-editor,
+      .session-exercise,
+      .plan-day-editor,
+      .food-library,
+      .assistant-context,
+      .assistant-answer details,
+      .formula-details,
+      .meal-total,
+      .upload-zone,
+      .photo-analysis,
+      .workout-focus,
+      .auth-form-box
+    )::before,
+  :root
+    :is(
+      .card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .training-intro,
+      .running-banner,
+      .consistency-card,
+      .history-row,
+      .item-editor,
+      .session-exercise,
+      .plan-day-editor,
+      .food-library,
+      .assistant-context,
+      .assistant-answer details,
+      .formula-details,
+      .meal-total,
+      .upload-zone,
+      .photo-analysis,
+      .workout-focus,
+      .auth-form-box
+    )::after {
+    display: none;
+  }
+  :root :is(.modal, .modal-header, .assistant-compose, .floating-mini) {
+    background: #142c42;
+  }
+}
+@media (forced-colors: active) {
+  :root
+    :is(
+      .card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .training-intro,
+      .running-banner,
+      .consistency-card,
+      .history-row,
+      .item-editor,
+      .session-exercise,
+      .plan-day-editor,
+      .food-library,
+      .assistant-context,
+      .assistant-answer details,
+      .formula-details,
+      .meal-total,
+      .upload-zone,
+      .photo-analysis,
+      .workout-focus,
+      .auth-form-box
+    ),
+  :root :is(.modal, .floating-mini) {
+    background: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  :root
+    :is(
+      .card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .training-intro,
+      .running-banner,
+      .consistency-card,
+      .history-row,
+      .item-editor,
+      .session-exercise,
+      .plan-day-editor,
+      .food-library,
+      .assistant-context,
+      .assistant-answer details,
+      .formula-details,
+      .meal-total,
+      .upload-zone,
+      .photo-analysis,
+      .workout-focus,
+      .auth-form-box
+    )::before,
+  :root
+    :is(
+      .card,
+      .workout-feature,
+      .ai-banner,
+      .empty-meal,
+      .training-intro,
+      .running-banner,
+      .consistency-card,
+      .history-row,
+      .item-editor,
+      .session-exercise,
+      .plan-day-editor,
+      .food-library,
+      .assistant-context,
+      .assistant-answer details,
+      .formula-details,
+      .meal-total,
+      .upload-zone,
+      .photo-analysis,
+      .workout-focus,
+      .auth-form-box
+    )::after {
+    display: none;
+  }
+}

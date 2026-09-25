@@ -1,0 +1,422 @@
+﻿.assistant-launcher,
+.explain-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: transparent;
+  color: var(--lime);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 9px 12px;
+  min-height: 40px;
+  font-size: 12px;
+}
+.explain-button {
+  margin: 8px 0 14px;
+  text-align: left;
+}
+.assistant-launcher:hover,
+.explain-button:hover {
+  background: #1e3951;
+}
+.assistant-chat {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+.assistant-context {
+  display: grid;
+  gap: 7px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.assistant-context .pill {
+  justify-self: start;
+}
+.assistant-context small,
+.assistant-compose-actions small {
+  font-size: 12px;
+  color: #9aabbe;
+  line-height: 1.5;
+}
+.assistant-context > span:not(.pill) {
+  color: #abbccf;
+  font-size: 13px;
+}
+.assistant-transcript {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+.assistant-question {
+  background: #223f57;
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin: 0 0 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.assistant-question > span {
+  display: block;
+  font-size: 12px;
+  color: var(--lime);
+  margin-bottom: 5px;
+}
+.assistant-answer h3 {
+  font-size: 17px;
+  margin: 0 0 10px;
+}
+.assistant-answer p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #dad8d2;
+  margin: 10px 0;
+}
+.assistant-answer details {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 12px;
+  margin: 12px 0;
+}
+.assistant-answer summary {
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--lime);
+}
+.assistant-answer ul {
+  padding-left: 18px;
+  max-height: 240px;
+  overflow: auto;
+}
+.assistant-answer li {
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+  color: #b1c2d5;
+}
+.assistant-records,
+.assistant-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.assistant-records .btn {
+  white-space: normal;
+  font-size: 12px;
+  text-align: left;
+}
+.assistant-suggestions > button {
+  border: 1px solid #355975;
+  border-radius: 10px;
+  padding: 10px 12px;
+  background: #19334a;
+  color: #f4f0e8;
+  font-size: 12px;
+  text-align: left;
+  min-height: 44px;
+}
+.assistant-compose {
+  position: sticky;
+  bottom: -24px;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  padding: 14px 0;
+  z-index: 2;
+}
+.assistant-compose textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 60px;
+  max-height: 160px;
+}
+.assistant-compose-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+.assistant-progress {
+  font-size: 13px;
+  color: var(--lime);
+}
+@media (max-width: 760px) {
+  .assistant-launcher {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
+  .assistant-launcher > span {
+    display: none;
+  }
+  .explain-button {
+    min-height: 44px;
+  }
+  .assistant-compose {
+    bottom: -18px;
+  }
+  .assistant-compose textarea {
+    font-size: 16px;
+  }
+  .assistant-compose-actions .btn {
+    padding: 10px;
+    font-size: 12px;
+  }
+  .assistant-context {
+    padding: 12px;
+  }
+  .assistant-answer p {
+    font-size: 14px;
+  }
+  .assistant-records .btn {
+    width: 100%;
+  }
+}
+@media (max-height: 550px) {
+  .assistant-compose {
+    position: static;
+  }
+}
+
+/* Keep conversation primary; details and controls stay compact. */
+.assistant-chat {
+  gap: 12px;
+}
+.assistant-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.assistant-toolbar > .text-link {
+  flex-shrink: 0;
+  font-size: 12px;
+  min-height: 36px;
+}
+.assistant-context {
+  display: block;
+  border: 0;
+  padding: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.assistant-context summary {
+  cursor: pointer;
+  padding: 9px 0;
+}
+.assistant-context p {
+  line-height: 1.6;
+  margin: 8px 0;
+}
+.assistant-transcript {
+  display: block;
+  min-height: 180px;
+  max-height: 46dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px 10px 4px 0;
+}
+.assistant-turn + .assistant-turn {
+  margin-top: 24px;
+}
+.assistant-question {
+  margin-left: auto;
+  width: fit-content;
+  max-width: 88%;
+  border-radius: 16px 16px 4px 16px;
+}
+.assistant-question > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.assistant-answer {
+  padding: 0 4px;
+}
+.assistant-answer p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.assistant-welcome {
+  text-align: center;
+  padding: 24px 4px;
+}
+.assistant-welcome > svg {
+  color: var(--lime);
+}
+.assistant-welcome h3 {
+  margin: 12px 0 6px;
+}
+.assistant-welcome p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.assistant-welcome .assistant-suggestions {
+  justify-content: center;
+  margin-top: 20px;
+}
+.assistant-compose {
+  position: static;
+  padding: 12px 0 0;
+}
+.assistant-compose-actions small {
+  max-width: 65%;
+  font-size: 11px;
+}
+@media (max-width: 760px) {
+  .assistant-context {
+    padding: 0;
+  }
+  .assistant-transcript {
+    max-height: 40dvh;
+  }
+  .assistant-welcome {
+    padding: 16px 0;
+  }
+}
+
+.assistant-context {
+  flex: 1;
+  min-width: 0;
+}
+.assistant-range {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 8px 0 12px;
+}
+.assistant-range .error-box,
+.assistant-range > .btn {
+  grid-column: 1/-1;
+}
+.assistant-range input {
+  min-width: 0;
+  width: 100%;
+}
+.assistant-compose-actions {
+  justify-content: flex-end;
+}
+@media (max-width: 480px) {
+  .assistant-range {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Context selector: a readable heading, applied period and aligned date fields. */
+.assistant-chat .assistant-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 10px;
+}
+.assistant-chat .assistant-context {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+}
+.assistant-context > summary {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  list-style: none;
+}
+.assistant-context > summary::-webkit-details-marker {
+  display: none;
+}
+.context-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.context-heading::after {
+  content: "⌄";
+  font-size: 17px;
+  color: var(--muted);
+}
+.assistant-context[open] .context-heading::after {
+  content: "⌃";
+}
+.context-count {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.context-period {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.assistant-context .assistant-range {
+  padding: 16px;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+.assistant-range .field {
+  gap: 7px;
+}
+.assistant-range .field > span:first-child {
+  font-size: 12px;
+  font-weight: 500;
+}
+.assistant-range > .btn {
+  margin-top: 2px;
+  min-height: 42px;
+}
+.assistant-toolbar > .text-link {
+  padding: 14px 2px;
+}
+@media (max-width: 600px) {
+  .assistant-chat .assistant-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .assistant-toolbar > .text-link {
+    justify-self: end;
+    padding: 8px 2px;
+    min-height: 32px;
+  }
+  .assistant-context .assistant-range {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.assistant-answer > ul,
+.assistant-answer > ol {
+  margin: 12px 0;
+  padding-left: 22px;
+  max-height: none;
+  overflow: visible;
+  color: #dad8d2;
+}
+.assistant-answer > ul > li,
+.assistant-answer > ol > li {
+  margin: 7px 0;
+  padding-left: 3px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.assistant-answer li::marker {
+  color: var(--lime);
+}
+.assistant-answer strong {
+  font-weight: 600;
+  color: var(--text);
+}

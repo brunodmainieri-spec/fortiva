@@ -1,0 +1,18 @@
+project_id = "fortiva"
+
+[functions.analyze-meal-photo]
+# The handler validates the bearer token with Supabase Auth on every request,
+# supporting both legacy and asymmetric JWT signing keys.
+verify_jwt = false
+
+[functions.generate-training-plan]
+# Authentication is validated with Supabase Auth in the handler.
+verify_jwt = false
+
+[functions.assistant-chat]
+# The handler validates the session with Supabase Auth.
+verify_jwt = false
+
+[auth]
+site_url = "https://fortiva-fit.vercel.app"
+additional_redirect_urls = ["http://127.0.0.1:5173/entrar", "http://127.0.0.1:5173/redefinir-senha", "http://localhost:5173/entrar", "http://localhost:5173/redefinir-senha", "https://fortiva-fit.vercel.app/entrar", "https://fortiva-fit.vercel.app/redefinir-senha"]

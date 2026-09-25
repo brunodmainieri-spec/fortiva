@@ -1,0 +1,275 @@
+/* Mobile refinements are scoped to functional labels and controls. */
+@media (max-width: 760px) {
+  .field > span,
+  .field > small,
+  .input-suffix > span,
+  .modal-header p,
+  .card-footnote,
+  .macro-label,
+  .macro-label small,
+  .macro-bottom,
+  .macro-bottom > span:last-child,
+  .calorie-details > p,
+  .calorie-details > .calorie-target,
+  .calorie-target b,
+  .calorie-details > .text-link,
+  .stat-top,
+  .stat-detail,
+  .meal-title > span,
+  .meal-aside small,
+  .macro-chips,
+  .weight-mini-footer > .text-link,
+  .trend-badge,
+  .chart-description,
+  .chart-legend,
+  .frequency-card > .small,
+  .frequency-row,
+  .frequency-row strong,
+  .nutrition-period-macros > .card > span,
+  .nutrition-period-macros p,
+  .session-timer small,
+  .plan-footer,
+  .photo-analysis p,
+  .formula-details,
+  .formula-details p,
+  .profile-summary > p,
+  .profile-summary > small,
+  .week-heading p,
+  .info-box,
+  .success-box,
+  .error-box {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .page-heading p,
+  .meal-main > p,
+  .ai-banner p,
+  .workout-feature > p,
+  .checkbox-label,
+  .modal .text-link,
+  .modal .segmented > button {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .card-title h3,
+  .weight-mini .card-title h3,
+  .macro-label strong,
+  .meal-title h3,
+  .ai-banner h3 {
+    font-size: 14px;
+  }
+  .field input,
+  .field select,
+  .field textarea,
+  .set-row input,
+  .date-switch input,
+  .period-caption input,
+  .chart-card select,
+  .search-modal input {
+    font-size: 16px;
+    min-height: 44px;
+    max-width: 100%;
+  }
+  .icon-btn,
+  .meal-aside .icon-btn,
+  .date-switch .icon-btn,
+  .password-input .icon-btn,
+  .set-row .icon-btn,
+  .search-trigger,
+  .set-check {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+  }
+  .password-input input {
+    padding-right: 50px;
+  }
+  .modal-header > .icon-btn {
+    margin-top: 0;
+  }
+  .modal-header {
+    gap: 10px;
+  }
+  .modal-header > div {
+    min-width: 0;
+  }
+  .modal-header p {
+    overflow-wrap: anywhere;
+  }
+  .page-heading > .page-action > .btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .form-actions .btn,
+  .page-heading > .page-action > .button-row .btn {
+    font-size: 13px;
+    min-height: 44px;
+    white-space: normal;
+  }
+  .modal .form-actions {
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  .modal .form-actions > .btn {
+    flex: 1 1 110px;
+    padding: 12px 10px;
+  }
+  .modal {
+    scroll-padding-top: 150px;
+    scroll-padding-bottom: 130px;
+  }
+  .bottom-nav {
+    gap: 2px;
+  }
+  .bottom-nav > a {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 48px;
+    padding: 3px 4px;
+    font-size: 12px;
+  }
+  .macro-bottom {
+    flex-wrap: wrap;
+  }
+  .macro-bottom > span:last-child {
+    width: auto;
+  }
+  .calorie-details {
+    min-width: 0;
+  }
+  .calorie-details > .calorie-target {
+    flex-wrap: wrap;
+  }
+  .calorie-target b {
+    white-space: nowrap;
+  }
+  .macro-chips {
+    flex-wrap: wrap;
+    gap: 6px 10px;
+  }
+  .meal-title {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .meal-aside > div {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .set-table-head,
+  .set-row {
+    grid-template-columns: 28px minmax(0, 1fr) minmax(0, 1fr) 44px 44px;
+    gap: 5px;
+  }
+  .set-row input {
+    padding: 8px 4px;
+    min-width: 0;
+  }
+  .set-table-head {
+    font-size: 12px;
+  }
+  .set-table-head > span {
+    overflow-wrap: anywhere;
+  }
+  .week-day {
+    min-width: 0;
+  }
+  .week-day > small {
+    font-size: 10px;
+    height: auto;
+  }
+}
+@media (max-width: 760px) and (min-height: 560px) {
+  .modal-body > form > .form-actions {
+    position: sticky;
+    bottom: -22px;
+    z-index: 4;
+    background: #152d43;
+    padding: 12px 0 calc(14px + env(safe-area-inset-bottom));
+    box-shadow: 0 -12px 18px #152d43e6;
+  }
+}
+@media (max-width: 420px) {
+  .calorie-content {
+    gap: 10px;
+  }
+  .calorie-content .energy-ring {
+    width: 145px;
+    height: 170px;
+    flex-shrink: 0;
+  }
+  .calorie-details > .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+  .meal-card {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+  .meal-card .meal-main {
+    min-width: 0;
+  }
+  .meal-card .meal-aside {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+  }
+  .meal-card .meal-aside > div {
+    flex-wrap: nowrap;
+  }
+  .nutrition-period-macros {
+    grid-template-columns: 1fr;
+  }
+  .date-switch {
+    max-width: 100%;
+    gap: 2px;
+  }
+  .date-switch input {
+    width: 150px;
+    min-width: 0;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+@media (max-width: 350px) {
+  .calorie-content {
+    flex-direction: column;
+  }
+  .calorie-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 10px;
+  }
+  .calorie-details > .mini-divider {
+    display: none;
+  }
+  .calorie-details > .calorie-target {
+    justify-content: flex-end;
+  }
+  .calorie-details > strong {
+    font-size: 25px;
+  }
+  .modal-body {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .modal-header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .session-exercise {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .week-card {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .week-days {
+    gap: 2px;
+  }
+  .week-day > div {
+    width: 30px;
+    height: 34px;
+  }
+}

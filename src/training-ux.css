@@ -1,0 +1,137 @@
+﻿.plan-draft-banner {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+  border-color: #4c7998;
+}
+.plan-draft-banner p {
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+.workout-focus {
+  padding: 22px;
+  border: 1px solid #798a9d;
+  border-radius: 16px;
+  background: #193249;
+  display: grid;
+  gap: 14px;
+}
+.workout-focus h3 {
+  margin: 0;
+  font-size: 24px;
+}
+.workout-focus p {
+  margin: 0;
+  font-size: 15px;
+  color: #dfddd7;
+}
+.focus-heading,
+.focus-rest {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.focus-heading strong {
+  font-size: 14px;
+}
+.workout-focus progress {
+  appearance: none;
+  width: 100%;
+  height: 9px;
+  border: 0;
+  border-radius: 8px;
+  background: #2a4a64;
+  overflow: hidden;
+}
+.workout-focus progress::-webkit-progress-bar {
+  background: #2a4a64;
+}
+.workout-focus progress::-webkit-progress-value {
+  background: #f4f0e8;
+}
+.workout-focus progress::-moz-progress-bar {
+  background: #f4f0e8;
+}
+.complete-current {
+  width: 100%;
+  min-height: 54px;
+  font-size: 16px;
+}
+.focus-rest {
+  border-top: 1px solid #345773;
+  padding-top: 10px;
+}
+.focus-rest span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+.exercise-disclosure {
+  width: 100%;
+  background: none;
+  color: inherit;
+  border: 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  min-height: 52px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+.exercise-disclosure:disabled {
+  opacity: 1;
+  cursor: default;
+}
+.exercise-disclosure small {
+  display: block;
+  font-weight: 400;
+  color: #a7b8cb;
+  font-size: 13px;
+  padding-top: 5px;
+}
+.focused-exercise {
+  border-color: #6c7d90;
+}
+.exercise-options {
+  margin: 12px 0;
+  padding: 10px 0;
+}
+.exercise-options summary {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 0;
+  color: #b3c4d7;
+}
+.exercise-options > .button {
+  margin-bottom: 12px;
+}
+.current-set {
+  background: #25425b;
+  border-radius: 8px;
+  outline: 1px solid #899aad;
+}
+@media (max-width: 600px) {
+  .workout-focus {
+    padding: 16px;
+  }
+  .workout-focus h3 {
+    font-size: 21px;
+  }
+  .plan-draft-banner .button-row {
+    width: 100%;
+  }
+  .plan-draft-banner .button-row > * {
+    flex: 1;
+  }
+}

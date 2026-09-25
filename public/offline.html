@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d294e" />
+    <title>FORTIVA — Sem conexão</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        background: #0d294e;
+        color: #f4f0e8;
+        font-family: system-ui, sans-serif;
+        padding: 24px;
+      }
+      main {
+        max-width: 420px;
+        text-align: center;
+      }
+      img {
+        border-radius: 24px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        line-height: 1.6;
+        color: #c3d1e3;
+      }
+      button {
+        border: 0;
+        padding: 14px 24px;
+        border-radius: 12px;
+        background: #f4f0e8;
+        color: #0d294e;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      button:focus-visible {
+        outline: 3px solid #b5dfff;
+        outline-offset: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/icons/icon-192.png" width="80" height="80" alt="FORTIVA" />
+      <h1>Vamos retomar quando houver conexão.</h1>
+      <p>
+        Conecte-se à internet para entrar na sua conta, consultar e salvar seus
+        registros.
+      </p>
+      <button type="button" onclick="window.location.reload()">
+        Tentar novamente
+      </button>
+    </main>
+  </body>
+</html>

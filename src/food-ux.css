@@ -1,0 +1,145 @@
+.food-day-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+}
+.food-day-status strong {
+  font-size: 14px;
+  color: #f0eee8;
+}
+.food-day-status p,
+.draft-note {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 5px 0 0;
+}
+.food-day-status .btn {
+  flex-shrink: 0;
+}
+.meal-drafts {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.draft-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+}
+.draft-row > span {
+  flex: 1;
+  min-width: 150px;
+  font-size: 13px;
+}
+.food-library {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: grid;
+  gap: 14px;
+  background: rgba(244, 240, 232, 0.015);
+}
+.food-library .segmented {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.food-library .segmented button {
+  flex: 1;
+  min-width: 100px;
+}
+.food-library-list {
+  max-height: 265px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.food-library-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.food-library-row > div {
+  flex: 1;
+  min-width: 0;
+}
+.food-library-row strong {
+  display: block;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.food-library-row small {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.food-library-row [aria-pressed="true"] {
+  color: var(--lime);
+}
+.save-meal-template {
+  display: grid;
+  gap: 12px;
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.checkbox-label input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--lime);
+}
+.macro-percentage {
+  margin: 7px 0 0;
+  text-align: right;
+  font-size: 12px;
+  color: var(--muted);
+}
+.undo-action {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  border-radius: 7px;
+  min-height: 36px;
+  padding: 5px 12px;
+  margin-left: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+@media (max-width: 760px) {
+  .food-day-status {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+  .food-day-status .btn {
+    width: 100%;
+  }
+  .food-library {
+    padding: 12px;
+  }
+  .food-library-row {
+    flex-wrap: wrap;
+  }
+  .food-library-row > div {
+    min-width: 100px;
+  }
+  .food-library-row > .btn {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .draft-row .btn {
+    flex: 1;
+  }
+}
