@@ -110,6 +110,8 @@ Na publicação, envie toda a pasta `dist`, inclusive `sw.js`, `offline.html`, `
 
 Site de produção: https://fortiva-fit.vercel.app
 
+O projeto Vercel está conectado ao repositório https://github.com/brunodmainieri-spec/fortiva. Cada push ou merge na branch `main` dispara um build de produção; após a conclusão com sucesso, a Vercel atualiza o site no domínio acima. Alterações locais precisam ser commitadas e enviadas ao GitHub para iniciar esse processo. Mudanças nas Edge Functions e migrações do Supabase continuam exigindo publicação separada no Supabase.
+
 Projeto: eu-sou-pro/fortiva-app. Para publicar alterações desta pasta já vinculada: `npx vercel deploy --prod`. O build roda `npm run build`; `vercel.json` configura as rotas do React e impede cache persistente do service worker. A Vercel possui somente VITE_SUPABASE_URL e VITE_SUPABASE_PUBLISHABLE_KEY para o frontend; a chave OpenAI permanece nos secrets do Supabase. `.vercelignore` exclui arquivos de ambiente, resultados de testes e artefatos locais do upload.
 
 As URLs de autenticação de produção estão em `supabase/config.toml`. Antes de atualizar configurações remotas, use `npx supabase config diff --project-ref sylkxxfnvmqbxbopshix` e confira o diff.
