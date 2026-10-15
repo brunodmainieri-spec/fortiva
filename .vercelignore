@@ -9,3 +9,4 @@ debug.log
 *.tsbuildinfo
 supabase/.temp
 .git
+*.backup

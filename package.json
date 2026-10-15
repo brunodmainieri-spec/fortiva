@@ -12,9 +12,9 @@
     "format": "prettier --write src tests *.ts *.json index.html README.md",
     "pwa:icons": "node scripts/generate-pwa-icons.mjs",
     "test:pwa": "npm run build && playwright test --config playwright.pwa.config.ts",
-    "deploy:meal-photo": "npx supabase functions deploy analyze-meal-photo --project-ref sylkxxfnvmqbxbopshix --no-verify-jwt",
-    "deploy:training": "npx supabase functions deploy generate-training-plan --project-ref sylkxxfnvmqbxbopshix --no-verify-jwt",
-    "deploy:chat": "npx supabase functions deploy assistant-chat --project-ref sylkxxfnvmqbxbopshix --no-verify-jwt"
+    "deploy:meal-photo": "npx supabase functions deploy analyze-meal-photo --project-ref wsedvlyycywbpumhmmer --no-verify-jwt",
+    "deploy:training": "npx supabase functions deploy generate-training-plan --project-ref wsedvlyycywbpumhmmer --no-verify-jwt",
+    "deploy:chat": "npx supabase functions deploy assistant-chat --project-ref wsedvlyycywbpumhmmer --no-verify-jwt"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.1",
